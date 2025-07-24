@@ -64,7 +64,19 @@ function HomePage() {
           <h2 className="section-title">Categories</h2>
           <div className="categories">
             {categories.map(category => (
-              <div key={category.id} className="category-card">
+              <div 
+                key={category.id} 
+                className="category-card"
+                onClick={() => {
+                  if (category.name === 'Drinks') {
+                    setCurrentPage('drinks');
+                  } else if (category.name === 'Fast Food') {
+                    setCurrentPage('fastfood');
+                  } else if (category.name === 'Groceries') {
+                    setCurrentPage('groceries');
+                  }
+                }}
+              >
                 <div className="category-icon">
                   {category.icon === 'category-food' && <FaUtensils />}
                   {category.icon === 'category-drink' && <FaGlassMartiniAlt />}
