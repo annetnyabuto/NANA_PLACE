@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from './AppContext'
+import './styles/global.css'
 import Header from './components/Header'
 import Footer from './components/footer'
 import HomePage from './components/HomePage'
@@ -7,7 +8,8 @@ import RestaurantPage from './components/RestaurantPage'
 import CartSidebar from './components/CartSidebar'
 import LoginModal from './components/LoginModal'
 import CheckoutPage from './components/CheckoutPage'
-import DashboardPage from './components/dashboardPage'
+import DashboardPage from './components/DashboardPage'
+
 function App() {
   const { currentPage, showLoginModal, showCart } = useContext(AppContext)
 

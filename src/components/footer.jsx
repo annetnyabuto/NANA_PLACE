@@ -1,9 +1,6 @@
-import { useContext } from 'react'
-import { AppContext } from '../AppContext'
 import '../styles/Footer.css'
 
 function Footer() {
-  const { setCurrentPage } = useContext(AppContext)
 
   return (
     <footer>

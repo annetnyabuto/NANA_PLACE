@@ -223,6 +223,7 @@ export const AppProvider = ({ children }) => {
     ))
   }
   const handleLogin = (email, password) => {
+
     setUser({ email, name: 'John Doe' })
     setShowLoginModal(false)
   }

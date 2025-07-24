@@ -11,7 +11,7 @@ function LoginModal() {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    handleLogin(email, password)
+    handleLogin(email)
   }
   
   return (
@@ -75,4 +75,4 @@ function LoginModal() {
   )
 }
 
-export default LoginModal
+export default LoginModal;
