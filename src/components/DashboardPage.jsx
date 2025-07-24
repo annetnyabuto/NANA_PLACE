@@ -1,6 +1,9 @@
+import { useContext } from 'react'
+import { AppContext } from '../AppContext'
 import '../styles/DashboardPage.css'
 
-function DashboardPage({ user, orders, onLogout, setCurrentPage }) {
+function DashboardPage() {
+  const { user, orders, handleLogout, setCurrentPage } = useContext(AppContext)
   return (
     <div className="container" style={{ padding: '20px 0' }}>
       <h2 className="section-title">My Account</h2>
@@ -12,7 +15,7 @@ function DashboardPage({ user, orders, onLogout, setCurrentPage }) {
             <p><strong>Name:</strong> {user?.name || 'Guest'}</p>
             <p><strong>Email:</strong> {user?.email || 'Not provided'}</p>
             <button 
-              onClick={onLogout}
+              onClick={handleLogout}
               style={{ 
                 marginTop: '15px',
                 padding: '8px 15px',
