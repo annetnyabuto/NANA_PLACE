@@ -29,6 +29,7 @@ export const AppProvider = ({ children }) => {
       deliveryTime: '20-30 min',
       minOrder: '$10',
       categories: [1],
+      coordinates: [40.7589, -73.9851],
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ export const AppProvider = ({ children }) => {
       deliveryTime: '25-35 min',
       minOrder: '$15',
       categories: [1, 6],
+      coordinates: [40.7505, -73.9934],
     },
     {
       id: 3,
@@ -47,6 +49,7 @@ export const AppProvider = ({ children }) => {
       deliveryTime: '30-40 min',
       minOrder: '$20',
       categories: [5],
+      coordinates: [40.7614, -73.9776],
     },
     {
       id: 4,
@@ -56,6 +59,7 @@ export const AppProvider = ({ children }) => {
       deliveryTime: '15-25 min',
       minOrder: '$8',
       categories: [4],
+      coordinates: [40.7282, -74.0776],
     },
   ]
 

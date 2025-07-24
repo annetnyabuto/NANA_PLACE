@@ -9,6 +9,7 @@ import CartSidebar from './components/CartSidebar'
 import LoginModal from './components/LoginModal'
 import CheckoutPage from './components/CheckoutPage'
 import DashboardPage from './components/DashboardPage'
+import MapView from './components/MapView'
 
 function App() {
   const { currentPage, showLoginModal, showCart } = useContext(AppContext)
@@ -23,6 +24,8 @@ function App() {
         return <DashboardPage />
       case 'checkout':
         return <CheckoutPage />
+      case 'map':
+        return <MapView />
       default:
         return <HomePage />
     }

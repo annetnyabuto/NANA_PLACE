@@ -1,10 +1,11 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AppContext } from '../AppContext'
 import '../styles/Header.css'
-import { FaShoppingCart, FaUser, FaSignInAlt, FaUserPlus } from 'react-icons/fa'
+import { FaShoppingCart, FaUser, FaSignInAlt, FaUserPlus, FaBars, FaTimes } from 'react-icons/fa'
 
 function Header() {
-  const { user, cartItems, setShowCart, setShowLoginModal } = useContext(AppContext)
+  const { user, cartItems, setShowCart, setShowLoginModal, setCurrentPage } = useContext(AppContext)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   return (
     <header>
@@ -13,31 +14,57 @@ function Header() {
           <span className="logo-icon">
             <FaShoppingCart />
           </span>
-          <span>Food For</span>
+          <span>NANA'S PLACE</span>
         </div>
         
-        <ul className="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Restaurants</a></li>
-          <li><a href="#">Offers</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
+        <button className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
         
-        <div className="auth-buttons">
+        <nav className={`nav-menu ${isMobileMenuOpen ? 'nav-menu-open' : ''}`}>
+          <ul className="nav-links">
+            <li><a href="#" onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }}>Home</a></li>
+            <li><a href="#" onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }}>Restaurants</a></li>
+            <li><a href="#" onClick={() => setIsMobileMenuOpen(false)}>Offers</a></li>
+            <li><a href="#" onClick={() => setIsMobileMenuOpen(false)}>Help</a></li>
+          </ul>
+          
+          <div className="mobile-auth">
+            {user ? (
+              <span className="user-greeting">
+                <FaUser />
+                <span>Welcome, {user.name}</span>
+              </span>
+            ) : (
+              <>
+                <button className="login-btn" onClick={() => { setShowLoginModal(true); setIsMobileMenuOpen(false); }}>
+                  <FaSignInAlt />
+                  <span>Log In</span>
+                </button>
+                <button className="signup-btn" onClick={() => { setShowLoginModal(true); setIsMobileMenuOpen(false); }}>
+                  <FaUserPlus />
+                  <span>Sign Up</span>
+                </button>
+              </>
+            )}
+          </div>
+        </nav>
+        
+        <div className="desktop-auth">
           {user ? (
             <span className="user-greeting">
-              <FaUser style={{ marginRight: '5px' }} />
-              Welcome, {user.name}
+              <FaUser />
+              <span>Welcome, {user.name}</span>
             </span>
           ) : (
             <>
               <button className="login-btn" onClick={() => setShowLoginModal(true)}>
-                <FaSignInAlt style={{ marginRight: '5px' }} />
-                Log In
+                <FaSignInAlt />
+                <span>Log In</span>
               </button>
               <button className="signup-btn" onClick={() => setShowLoginModal(true)}>
-                <FaUserPlus style={{ marginRight: '5px' }} />
-                Sign Up
+                <FaUserPlus />
+                <span>Sign Up</span>
               </button>
             </>
           )}

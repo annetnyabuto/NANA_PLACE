@@ -17,12 +17,6 @@ function RestaurantPage() {
     return (
       <div className="container">
         <p>No restaurant selected. Please go back and select a restaurant.</p>
-        <button 
-          className="back-btn" 
-          onClick={() => setCurrentPage('home')}
-        >
-          ← Back to Restaurants
-        </button>
       </div>
     );
   }
@@ -36,13 +30,6 @@ function RestaurantPage() {
   
   return (
     <div className="container">
-      <button 
-        className="back-btn" 
-        onClick={() => setCurrentPage('home')}
-      >
-        ← Back to Restaurants
-      </button>
-      
       <div className="restaurant-header">
         <img 
           src={selectedRestaurant.image} 
