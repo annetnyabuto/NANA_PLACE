@@ -13,7 +13,6 @@ function RestaurantPage() {
   
   const [activeCategory, setActiveCategory] = useState('All');
   
-  // Check if selectedRestaurant exists
   if (!selectedRestaurant) {
     return (
       <div className="container">
@@ -28,11 +27,9 @@ function RestaurantPage() {
     );
   }
 
-  // Get unique categories from menu items
   const restaurantMenuItems = menuItems[selectedRestaurant.id] || [];
   const categories = ['All', ...new Set(restaurantMenuItems.map(item => item.category))];
   
-  // Filter menu items by active category
   const filteredItems = activeCategory === 'All' 
     ? restaurantMenuItems 
     : restaurantMenuItems.filter(item => item.category === activeCategory);

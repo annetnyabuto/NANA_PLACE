@@ -24,7 +24,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 1,
       name: 'Burger Palace',
-      image: '/burger.jpg',
+      image: './src/images/burger.jpg',
       rating: 4.5,
       deliveryTime: '20-30 min',
       minOrder: '$10',
@@ -33,7 +33,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 2,
       name: 'Pizza Heaven',
-      image: '/pizza.jpg',
+      image: './src/images/Pizza.jpg',
       rating: 4.2,
       deliveryTime: '25-35 min',
       minOrder: '$15',
@@ -42,7 +42,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 3,
       name: 'Sushi World',
-      image: '/sushi.jpg',
+      image: './src/images/sushi.jpg',
       rating: 4.7,
       deliveryTime: '30-40 min',
       minOrder: '$20',
@@ -51,7 +51,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 4,
       name: 'Sweet Dreams',
-      image: '/dessert.jpg',
+      image: './src/images/dessert.jpg',
       rating: 4.3,
       deliveryTime: '15-25 min',
       minOrder: '$8',
@@ -188,13 +188,10 @@ export const AppProvider = ({ children }) => {
       },
     ],
   }
-
-  // Calculate cart total
   const cartTotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
   const deliveryFee = cartTotal > 0 ? 2.99 : 0
   const orderTotal = cartTotal + deliveryFee
 
-    // Add to cart function
   const addToCart = (item, restaurantId) => {
     if (cartItems.length > 0 && cartItems[0].restaurantId !== restaurantId) {
       if (window.confirm('Your cart contains items from another restaurant. Would you like to clear your cart and add this item?')) {
@@ -213,13 +210,9 @@ export const AppProvider = ({ children }) => {
     }
     setShowCart(true)
   }
-
-  // Remove from cart function
   const removeFromCart = (itemId) => {
     setCartItems(cartItems.filter(item => item.id !== itemId))
   }
-
-  // Update quantity function
   const updateQuantity = (itemId, newQuantity) => {
     if (newQuantity < 1) {
       removeFromCart(itemId)
@@ -229,19 +222,13 @@ export const AppProvider = ({ children }) => {
       item.id === itemId ? { ...item, quantity: newQuantity } : item
     ))
   }
-
-  // Handle login
-  const handleLogin = (email) => {
-    setUser({ email, name: 'John Doe' })
+  const handleLogin = (email, password) => {
+    setUser({ email, name: 'Ann Joe' })
     setShowLoginModal(false)
   }
-
-  // Handle logout
   const handleLogout = () => {
     setUser(null)
   }
-
-  // Handle checkout
   const handleCheckout = (address, paymentMethod) => {
     const newOrder = {
       id: Date.now(),
