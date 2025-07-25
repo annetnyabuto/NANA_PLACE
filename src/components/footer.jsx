@@ -7,7 +7,7 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-column">
-            <h3>Food For</h3>
+            <h3>NANA'S PLACE</h3>
             <ul>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Careers</a></li>
@@ -39,7 +39,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Food For. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NANA'S PLACE. All rights reserved.</p>
         </div>
       </div>
     </footer>

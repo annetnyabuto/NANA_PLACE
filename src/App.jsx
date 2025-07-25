@@ -9,6 +9,10 @@ import CartSidebar from './components/CartSidebar'
 import LoginModal from './components/LoginModal'
 import CheckoutPage from './components/CheckoutPage'
 import DashboardPage from './components/DashboardPage'
+import MapView from './components/MapView'
+import DrinksPage from './components/DrinksPage'
+import FastFoodPage from './components/FastFoodPage'
+import GroceriesPage from './components/GroceriesPage'
 
 function App() {
   const { currentPage, showLoginModal, showCart } = useContext(AppContext)
@@ -23,6 +27,14 @@ function App() {
         return <DashboardPage />
       case 'checkout':
         return <CheckoutPage />
+      case 'map':
+        return <MapView />
+      case 'drinks':
+        return <DrinksPage />
+      case 'fastfood':
+        return <FastFoodPage />
+      case 'groceries':
+        return <GroceriesPage />
       default:
         return <HomePage />
     }
