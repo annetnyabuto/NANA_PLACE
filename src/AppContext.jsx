@@ -24,7 +24,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 1,
       name: 'Burger Palace',
-      image: './src/images/burger.jpg',
+      image: '/images/burger.jpg',
       rating: 4.5,
       deliveryTime: '20-30 min',
       minOrder: '$10',
@@ -34,7 +34,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 2,
       name: 'Pizza Heaven',
-      image: './src/images/Pizza.jpg',
+      image: '/images/Pizza.jpg',
       rating: 4.2,
       deliveryTime: '25-35 min',
       minOrder: '$15',
@@ -44,7 +44,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 3,
       name: 'Sushi World',
-      image: './src/images/sushi.jpg',
+      image: '/images/sushi.jpg',
       rating: 4.7,
       deliveryTime: '30-40 min',
       minOrder: '$20',
@@ -54,7 +54,7 @@ export const AppProvider = ({ children }) => {
     {
       id: 4,
       name: 'Sweet Dreams',
-      image: './src/images/dessert.jpg',
+      image: '/images/dessert.jpg',
       rating: 4.3,
       deliveryTime: '15-25 min',
       minOrder: '$8',
