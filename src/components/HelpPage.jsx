@@ -7,7 +7,7 @@ function HelpPage() {
     { question: 'What are the delivery charges?', answer: 'Delivery fee is $2.99. Free delivery on orders above $25.' },
     { question: 'How long does delivery take?', answer: 'Delivery typically takes 20-45 minutes depending on the restaurant.' },
     { question: 'Can I cancel my order?', answer: 'Orders can be cancelled within 5 minutes of placing them.' },
-    { question: 'What payment methods do you accept?', answer: 'We accept all major credit cards, debit cards, and digital wallets.' }
+    { question: 'What payment methods do you accept?', answer: 'We accept all major credit cards, debit cards, and m.pesa.' }
   ]
 
   return (

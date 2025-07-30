@@ -18,6 +18,7 @@ import AsianPage from './components/AsianPage'
 import ItalianPage from './components/ItalianPage'
 import OffersPage from './components/OffersPage'
 import HelpPage from './components/HelpPage'
+import AboutPage from './components/AboutPage'
 
 function App() {
   const { currentPage, showLoginModal, showCart } = useContext(AppContext)
@@ -50,6 +51,8 @@ function App() {
         return <OffersPage />
       case 'help':
         return <HelpPage />
+      case 'about':
+        return <AboutPage />
       default:
         return <HomePage />
     }

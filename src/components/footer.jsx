@@ -12,7 +12,7 @@ function Footer() {
           <div className="footer-column">
             <h3>NANA'S PLACE</h3>
             <ul>
-              <li><a href="#">About Us</a></li>
+              <li><a href="#" onClick={() => setCurrentPage('about')}>About Us</a></li>
             </ul>
           </div>
           <div className="footer-column">
