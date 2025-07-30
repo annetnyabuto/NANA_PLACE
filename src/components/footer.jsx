@@ -28,7 +28,6 @@ function Footer() {
             <h3>For Restaurants</h3>
             <ul>
               <li><a href="#">Partner With Us</a></li>
-              <li><a href="#">Business App</a></li>
             </ul>
           </div>
 
