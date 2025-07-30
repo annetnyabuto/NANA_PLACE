@@ -25,7 +25,7 @@ function Header() {
           <ul className="nav-links">
             <li><a href="#" onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }}>Home</a></li>
             <li><a href="#" onClick={() => { setCurrentPage('map'); setIsMobileMenuOpen(false); }}>Restaurants</a></li>
-            <li><a href="#" onClick={() => setIsMobileMenuOpen(false)}>Offers</a></li>
+            <li><a href="#" onClick={() => { setCurrentPage('offers'); setIsMobileMenuOpen(false); }}>Offers</a></li>
             <li><a href="#" onClick={() => setIsMobileMenuOpen(false)}>Help</a></li>
           </ul>
           
