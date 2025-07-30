@@ -101,13 +101,17 @@ header {
 
 .login-btn {
   color: var(--white);
-  border-color: var(--white);
-  background: transparent;
+  border-color: #ff8800;
+  background: #ff8800;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .login-btn:hover {
-  background-color: var(--white);
+  background: linear-gradient(135deg, var(--white), #f8f9fa);
   color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .signup-btn {
