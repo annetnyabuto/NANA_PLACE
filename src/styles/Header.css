@@ -136,38 +136,46 @@ header {
 .cart-btn {
   position: relative;
   padding: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   transition: all 0.3s ease;
   color: var(--white);
-  font-size: 18px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cart-btn:hover {
-  background-color: var(--white);
+  background: linear-gradient(135deg, var(--white), #f8f9fa);
   color: var(--primary-color);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  border-color: var(--white);
 }
 
 .cart-count {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: var(--secondary-color);
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #ff6b6b, #ff5252);
   color: var(--white);
   border-radius: 50%;
-  min-width: 22px;
-  height: 22px;
+  min-width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
   animation: pulse 2s infinite;
 }
 
