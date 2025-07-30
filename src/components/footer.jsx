@@ -13,8 +13,6 @@ function Footer() {
             <h3>NANA'S PLACE</h3>
             <ul>
               <li><a href="#">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
             </ul>
           </div>
           <div className="footer-column">
@@ -33,13 +31,7 @@ function Footer() {
               <li><a href="#">Business App</a></li>
             </ul>
           </div>
-          <div className="footer-column">
-            <h3>Download App</h3>
-            <ul>
-              <li><a href="#">iOS</a></li>
-              <li><a href="#">Android</a></li>
-            </ul>
-          </div>
+
         </div>
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} NANA'S PLACE. All rights reserved.</p>
