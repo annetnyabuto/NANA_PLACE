@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AppContext } from './AppContext'
 import './styles/global.css'
 import Header from './components/Header'
@@ -21,54 +22,36 @@ import HelpPage from './components/HelpPage'
 import AboutPage from './components/AboutPage'
 
 function App() {
-  const { currentPage, showLoginModal, showCart } = useContext(AppContext)
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage />
-      case 'restaurant':
-        return <RestaurantPage />
-      case 'dashboard':                             
-        return <DashboardPage />
-      case 'checkout':
-        return <CheckoutPage />
-      case 'map':
-        return <MapView />
-      case 'drinks':
-        return <DrinksPage />
-      case 'fastfood':
-        return <FastFoodPage />
-      case 'groceries':
-        return <GroceriesPage />
-      case 'desserts':
-        return <DessertPage />
-      case 'asian':
-        return <AsianPage />
-      case 'italian':
-        return <ItalianPage />
-      case 'offers':
-        return <OffersPage />
-      case 'help':
-        return <HelpPage />
-      case 'about':
-        return <AboutPage />
-      default:
-        return <HomePage />
-    }
-  }
+  const { showLoginModal, showCart } = useContext(AppContext)
 
   return (
-    <div className="app">
-      <Header />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer />
-      
-      {showLoginModal && <LoginModal />}
-      {showCart && <CartSidebar />}
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/restaurant" element={<RestaurantPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/map" element={<MapView />} />
+            <Route path="/drinks" element={<DrinksPage />} />
+            <Route path="/fastfood" element={<FastFoodPage />} />
+            <Route path="/groceries" element={<GroceriesPage />} />
+            <Route path="/desserts" element={<DessertPage />} />
+            <Route path="/asian" element={<AsianPage />} />
+            <Route path="/italian" element={<ItalianPage />} />
+            <Route path="/offers" element={<OffersPage />} />
+            <Route path="/help" element={<HelpPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        
+        {showLoginModal && <LoginModal />}
+        {showCart && <CartSidebar />}
+      </div>
+    </Router>
   )
 }
 

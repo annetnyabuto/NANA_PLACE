@@ -1,9 +1,13 @@
 import { createContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState('home')
+  const navigate = useNavigate()
+  const setCurrentPage = (page) => {
+    navigate(`/${page === 'home' ? '' : page}`)
+  }
   const [selectedRestaurant, setSelectedRestaurant] = useState(null)
   const [cartItems, setCartItems] = useState([])
   const [user, setUser] = useState(null)
@@ -253,7 +257,6 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        currentPage,
         setCurrentPage,
         selectedRestaurant,
         setSelectedRestaurant,
