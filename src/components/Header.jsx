@@ -26,7 +26,7 @@ function Header() {
             <li><a href="#" onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); }}>Home</a></li>
             <li><a href="#" onClick={() => { setCurrentPage('map'); setIsMobileMenuOpen(false); }}>Restaurants</a></li>
             <li><a href="#" onClick={() => { setCurrentPage('offers'); setIsMobileMenuOpen(false); }}>Offers</a></li>
-            <li><a href="#" onClick={() => setIsMobileMenuOpen(false)}>Help</a></li>
+            <li><a href="#" onClick={() => { setCurrentPage('help'); setIsMobileMenuOpen(false); }}>Help</a></li>
           </ul>
           
           <div className="mobile-auth">

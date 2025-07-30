@@ -1,6 +1,9 @@
+import { useContext } from 'react'
+import { AppContext } from '../AppContext'
 import '../styles/Footer.css'
 
 function Footer() {
+  const { setCurrentPage } = useContext(AppContext)
 
   return (
     <footer>
@@ -17,10 +20,10 @@ function Footer() {
           <div className="footer-column">
             <h3>Help</h3>
             <ul>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#" onClick={() => setCurrentPage('help')}>Contact Us</a></li>
+              <li><a href="#" onClick={() => setCurrentPage('help')}>FAQs</a></li>
+              <li><a href="#" onClick={() => setCurrentPage('help')}>Privacy Policy</a></li>
+              <li><a href="#" onClick={() => setCurrentPage('help')}>Terms of Service</a></li>
             </ul>
           </div>
           <div className="footer-column">
