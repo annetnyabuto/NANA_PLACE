@@ -14,6 +14,7 @@ import DrinksPage from './components/DrinksPage'
 import FastFoodPage from './components/FastFoodPage'
 import GroceriesPage from './components/GroceriesPage'
 import DessertPage from './components/DessertPage'
+import AsianPage from './components/AsianPage'
 
 function App() {
   const { currentPage, showLoginModal, showCart } = useContext(AppContext)
@@ -38,6 +39,8 @@ function App() {
         return <GroceriesPage />
       case 'desserts':
         return <DessertPage />
+      case 'asian':
+        return <AsianPage />
       default:
         return <HomePage />
     }

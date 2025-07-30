@@ -76,6 +76,8 @@ function HomePage() {
                     setCurrentPage('groceries');
                   } else if (category.name === 'Desserts') {
                     setCurrentPage('desserts');
+                  } else if (category.name === 'Asian') {
+                    setCurrentPage('asian');
                   }
                 }}
               >

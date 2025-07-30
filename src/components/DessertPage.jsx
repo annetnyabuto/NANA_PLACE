@@ -15,7 +15,8 @@ function DessertPage() {
           ...item,
           restaurantName: restaurant.name,
           restaurantId: restaurant.id,
-          rating: restaurant.rating
+          rating: restaurant.rating,
+          image: restaurant.image
         })
       })
     }
@@ -36,7 +37,7 @@ function DessertPage() {
       <div className="desserts-grid">
         {allDesserts.map(dessert => (
           <div key={dessert.id} className="dessert-card">
-            <img src="https://via.placeholder.com/300x180" alt={dessert.name} className="dessert-image" />
+            <img src={dessert.image} alt={dessert.name} className="dessert-image" />
             <div className="dessert-info">
               <h3 className="dessert-name">{dessert.name}</h3>
               <p className="dessert-description">{dessert.description}</p>

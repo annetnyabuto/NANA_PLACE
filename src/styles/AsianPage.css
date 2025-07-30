@@ -1,0 +1,144 @@
+.asian-header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.asian-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.asian-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: var(--dark-gray);
+}
+
+.asian-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.asian-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.asian-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.asian-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 160, 130, 0.12);
+  border-color: var(--primary-color);
+}
+
+.asian-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.asian-info {
+  padding: 20px;
+}
+
+.asian-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark-gray);
+}
+
+.asian-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.asian-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.asian-type {
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.asian-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.star-icon {
+  color: var(--secondary-color);
+}
+
+.asian-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.asian-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.add-asian-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-asian-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 160, 130, 0.3);
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .asian-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .asian-header h2 {
+    font-size: 2rem;
+  }
+  
+  .asian-icon {
+    font-size: 2.5rem;
+  }
+}
