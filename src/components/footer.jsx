@@ -27,7 +27,7 @@ function Footer() {
           <div className="footer-column">
             <h3>For Restaurants</h3>
             <ul>
-              <li><a href="#">Partner With Us</a></li>
+              <li><a href="#" onClick={() => setCurrentPage('partner')}>Partner With Us</a></li>
             </ul>
           </div>
 
