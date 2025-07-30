@@ -78,6 +78,8 @@ function HomePage() {
                     setCurrentPage('desserts');
                   } else if (category.name === 'Asian') {
                     setCurrentPage('asian');
+                  } else if (category.name === 'Italian') {
+                    setCurrentPage('italian');
                   }
                 }}
               >
