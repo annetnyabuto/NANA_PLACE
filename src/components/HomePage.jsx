@@ -74,6 +74,8 @@ function HomePage() {
                     setCurrentPage('fastfood');
                   } else if (category.name === 'Groceries') {
                     setCurrentPage('groceries');
+                  } else if (category.name === 'Desserts') {
+                    setCurrentPage('desserts');
                   }
                 }}
               >
