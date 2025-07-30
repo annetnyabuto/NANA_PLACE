@@ -22,6 +22,7 @@ import OffersPage from './components/OffersPage'
 import HelpPage from './components/HelpPage'
 import AboutPage from './components/AboutPage'
 import PartnerPage from './components/PartnerPage'
+import ReviewsPage from './components/ReviewsPage'
 
 function App() {
   const { showLoginModal, showCart } = useContext(AppContext)
@@ -48,6 +49,7 @@ function App() {
               <Route path="/help" element={<HelpPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/partner" element={<PartnerPage />} />
+              <Route path="/reviews" element={<ReviewsPage />} />
             </Routes>
           </main>
           <Footer />

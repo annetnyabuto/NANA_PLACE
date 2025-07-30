@@ -10,6 +10,7 @@ export const AppProvider = ({ children }) => {
   const [showLoginModal, setShowLoginModal] = useState(false)
   const [showCart, setShowCart] = useState(false)
   const [orders, setOrders] = useState([])
+  const [reviews, setReviews] = useState([])
 
   const categories = [
     { id: 1, name: 'Fast Food', icon: 'category-food' },
@@ -274,6 +275,12 @@ export const AppProvider = ({ children }) => {
     setUser(null)
   }
   const handleCheckout = (address, paymentMethod) => {
+    if (!user) {
+      alert('Please log in to place an order')
+      setShowLoginModal(true)
+      return
+    }
+    
     const newOrder = {
       id: Date.now(),
       items: [...cartItems],
@@ -287,7 +294,8 @@ export const AppProvider = ({ children }) => {
     setOrders([...orders, newOrder])
     setCartItems([])
     setShowCart(false)
-    setCurrentPage('dashboard')
+    alert('Order placed successfully!')
+    setCurrentPage('home')
   }
 
   return (
@@ -319,6 +327,8 @@ export const AppProvider = ({ children }) => {
         handleLogin,
         handleLogout,
         handleCheckout,
+        reviews,
+        setReviews,
       }}
     >
       {children}

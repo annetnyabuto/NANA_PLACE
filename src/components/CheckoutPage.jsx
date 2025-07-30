@@ -9,6 +9,10 @@ function CheckoutPage() {
   
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!address.trim()) {
+      alert('Please enter a delivery address')
+      return
+    }
     handleCheckout(address, paymentMethod)
   }
   

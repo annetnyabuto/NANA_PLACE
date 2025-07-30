@@ -1,0 +1,102 @@
+.review-form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.review-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.review-form button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+  background: var(--primary-dark);
+}
+
+.reviews-list {
+  display: grid;
+  gap: 20px;
+}
+
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-header h4 {
+  margin: 0;
+  color: var(--dark-gray);
+}
+
+.rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.restaurant-name {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.review-comment {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
