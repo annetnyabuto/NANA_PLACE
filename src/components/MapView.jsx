@@ -4,6 +4,7 @@ import { AppContext } from '../AppContext';
 import '../styles/MapView.css';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { FaSearch } from 'react-icons/fa';
 
 // Fix for default markers
 delete L.Icon.Default.prototype._getIconUrl;
@@ -16,7 +17,9 @@ L.Icon.Default.mergeOptions({
 function MapView() {
   const { restaurants, setSelectedRestaurant, setCurrentPage } = useContext(AppContext);
   const [userLocation, setUserLocation] = useState(null);
-  const [mapCenter, setMapCenter] = useState([40.7128, -74.0060]); // Default to NYC
+  const [mapCenter, setMapCenter] = useState([-1.2921, 36.8219]); // Default to Nairobi, Kenya
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -33,6 +36,16 @@ function MapView() {
     }
   }, []);
 
+  useEffect(() => {
+    const filtered = restaurants.filter(restaurant =>
+      restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredRestaurants(filtered);
+  }, [searchTerm, restaurants]);
+
+  const handleSearch = () => {
+  };
+
   const handleRestaurantClick = (restaurant) => {
     setSelectedRestaurant(restaurant);
     setCurrentPage('restaurant');
@@ -40,7 +53,19 @@ function MapView() {
 
   return (
     <div className="container">
-      <h2 className="section-title">Restaurants Around Me</h2>
+      <div className="map-search">
+        <input 
+          type="text" 
+          placeholder="Search restaurants..." 
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+        <button onClick={handleSearch} className="search-btn">
+          <FaSearch />
+        </button>
+      </div>
+      
       <div className="map-container">
         <MapContainer center={mapCenter} zoom={13} style={{ height: '500px', width: '100%' }}>
           <TileLayer
@@ -54,7 +79,7 @@ function MapView() {
             </Marker>
           )}
           
-          {restaurants.map(restaurant => (
+          {filteredRestaurants.map(restaurant => (
             <Marker 
               key={restaurant.id} 
               position={restaurant.coordinates}
